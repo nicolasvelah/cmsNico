@@ -12,5 +12,5 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-
 Route::get('category/{slug}/{id}', ['as' => 'category', 'uses' => 'CategoryController@category']);
+Route::get('article/{catslug}/{slug}/{id}', ['as' => 'article', 'uses' => 'ArticleController@article']);

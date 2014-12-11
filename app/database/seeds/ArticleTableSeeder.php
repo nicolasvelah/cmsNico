@@ -13,10 +13,12 @@ class ArticleTableSeeder extends Seeder {
 
 		foreach(range(1, 10) as $index)
 		{
+            $name = $faker->name;
 			Article::create([
                 'cat_id' => $faker->randomElement([1, 2]),
-                'title'  => $faker->name,
-                'description'	 => $faker->text(900)
+                'title'  => $name,
+                'description'	 => $faker->text(900),
+                'slug' => Str::slug($name)
 			]);
 		}
 	}

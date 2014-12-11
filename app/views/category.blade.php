@@ -5,8 +5,8 @@
 @foreach($category as $article)
     <div>
         <h1>{{$article->title}}</h1>
-        <p>{{$article->description}}</p>
-       <p>{{$article->cat_id}}</p>
+        <p>{{ Str::limit($article->description, 150) }}</p>
+       <p><a href="{{ route('article',[$slug, $article->slug, $article->id]) }}">{{ Lang::get('content.leermas') }}</a></p>
     </div>
 @endforeach
 

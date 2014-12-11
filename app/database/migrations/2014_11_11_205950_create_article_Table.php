@@ -18,6 +18,7 @@ class CreateArticleTable extends Migration {
             $table->integer('cat_id');
             $table->string('title');
             $table->longText('description');
+            $table->string('slug');
 
             $table->timestamps();
         });
