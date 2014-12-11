@@ -15,12 +15,22 @@ class UsersTableSeeder extends Seeder {
 		{
 
 			User::create([
+                'username' => $faker->userName,
                 'email' => $faker->email,
                 'password'  => \Hash::make(123456),
-                'full_name'	 => $faker->name
+                'full_name'	 => $faker->name,
+                'type'      => 'register',
 
 			]);
 		}
+        User::create([
+            'username' => 'nicolasvelah',
+            'email' => 'nicolasvelah@gmail.com',
+            'password'  => \Hash::make(123456),
+            'full_name'	 => 'Nicolás Vela',
+            'type'      => 'admin',
+
+        ]);
 	}
 
 }

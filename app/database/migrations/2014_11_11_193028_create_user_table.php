@@ -16,9 +16,11 @@ class CreateUserTable extends Migration {
         {
             $table->increments('id');
 
+            $table->string('username');
             $table->string('email');
             $table->string('password');
             $table->string('full_name');
+            $table->enum('type', ['admin', 'register']);
 
             $table->timestamps();
         });

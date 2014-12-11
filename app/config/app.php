@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
-        'Menu\MenuServiceProvider',
+        'Lavary\Menu\ServiceProvider',
+        'Frozennode\Administrator\AdministratorServiceProvider',
 
 	),
 
@@ -190,7 +191,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-        'Menu'              => 'Menu\Menu',
+        'Menu'              => 'Lavary\Menu\Facade',
 
 	),
 
