@@ -1,5 +1,6 @@
 <?php
 
+
 class LoginController extends BaseController {
 
 
@@ -10,16 +11,21 @@ class LoginController extends BaseController {
 
     public function postIndex()
     {
-        $username = Input::get('username');
-        $password = Input::get('password');
+        $data = Input::all();
+        $credentials = ['username' => $data['username'], 'password' => $data['password']];
+        //$username = Input::get('username');
+        //$password = Input::get('password');
 
-        if (Auth::attempt(['username' => $username, 'password' => $password]))
+        //dd($credentials);
+
+        if (Auth::attempt($credentials))
         {
             return Redirect::intended('/admin');
         }
-
+        dd('no');
         return Redirect::back()
             ->withInput()
             ->withErrors('Username or Password are incorrect.');
     }
+
 }
