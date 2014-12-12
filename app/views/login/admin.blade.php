@@ -11,17 +11,7 @@
 </head>
 
 <body>
-<!-- Menu -->
 {{ $MainMenu->asUl() }}
-
- <!-- Mensaje log in -->
-
-@if (Auth::check())
-    <p>
-      Te identificaste como {{ Auth::user()->full_name }}
-      <a href="{{ route('logout') }}">Salir</a>
-    </p>
-@endif
 
 
 @yield('content')

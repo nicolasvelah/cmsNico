@@ -21,6 +21,7 @@ class CreateUserTable extends Migration {
             $table->string('password');
             $table->string('full_name');
             $table->enum('type', ['admin', 'register']);
+            $table->string('remember_token')->nullable();
 
             $table->timestamps();
         });

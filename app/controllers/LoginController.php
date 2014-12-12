@@ -4,7 +4,7 @@
 class LoginController extends BaseController {
 
 
-    public function getIndex()
+    public function login()
     {
         return View::make('login.index');
     }
@@ -13,19 +13,25 @@ class LoginController extends BaseController {
     {
         $data = Input::all();
         $credentials = ['username' => $data['username'], 'password' => $data['password']];
-        //$username = Input::get('username');
-        //$password = Input::get('password');
-
-        //dd($credentials);
 
         if (Auth::attempt($credentials))
         {
-            return Redirect::intended('/admin');
+            if(is_admin()){
+                return Redirect::intended('/admin');
+            }else{
+                return Redirect::intended('/');
+            }
+
         }
         dd('no');
         return Redirect::back()
             ->withInput()
             ->withErrors('Username or Password are incorrect.');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::route('home');
     }
 
 }

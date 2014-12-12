@@ -1,5 +1,4 @@
 <?php
-
 return array(
 
 	/**
@@ -7,6 +6,7 @@ return array(
 	 *
 	 * @type string
 	 */
+
 	'uri' => 'admin',
 
 	/**
@@ -51,7 +51,7 @@ return array(
 	 * 		'Analytics' => array('E-Commerce' => 'page.ecommerce.analytics'),
 	 *	)
 	 */
-	'menu' => array('users', 'article'),
+	'menu' => array('categories', 'article', 'users'),
 
 	/**
 	 * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user
@@ -61,7 +61,11 @@ return array(
 	 */
 	'permission'=> function()
 	{
-		return Auth::check();
+        if(is_admin()) {
+            return Auth::check();
+        }else{
+            return false;
+        }
 	},
 
 	/**
@@ -84,7 +88,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'home_page' => 'users',
+	'home_page' => 'categories',
 
 	/**
 	 * The route to which the user will be taken when they click the "back to site" button
