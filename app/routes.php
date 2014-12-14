@@ -25,7 +25,7 @@ Route::get('article/{catslug}/{slug}/{id}', ['as' => 'article', 'uses' => 'BlogC
 Route::get('contact', ['as' => 'contact', 'uses' => 'FormsController@contact']);
 
 /*Send Mail*/
-Route::get('email', ['as' => 'email', 'uses' => 'EmailController@send']);
+Route::post('sendemail', ['as' => 'sendemail', 'uses' => 'EmailController@send']);
 
 /*login*/
 
@@ -47,7 +47,11 @@ Menu::make('MainMenu', function($menu){
 
     $menu->add('Home', array('route'  => 'home'));
     $menu->add('Categorias', array('route'  => 'categories'));
+    $menu->add('Categoría', 'category/empresa/1');
+    $menu->add('Artículo', 'article/empresa/florine-lind/4');
     $menu->add('Contacto', array('route'  => 'contact'));
     $menu->add('Login', array('route'  => 'login'));
+
+
 
 });
