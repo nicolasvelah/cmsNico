@@ -125,6 +125,9 @@ return array(
         'Lavary\Menu\ServiceProvider',
         'Frozennode\Administrator\AdministratorServiceProvider',
 
+        // Custom
+        'cmsNico\Components\FieldServiceProvider'
+
 	),
 
 	/*
@@ -192,6 +195,10 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
         'Menu'              => 'Lavary\Menu\Facade',
+
+        // Custom
+
+        'Field'           => 'cmsNico\Components\Field'
 
 	),
 

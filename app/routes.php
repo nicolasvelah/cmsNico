@@ -11,11 +11,23 @@
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('categories', ['as' => 'categories', 'uses' => 'CategoriesController@categories']);
-Route::get('category/{slug}/{id}', ['as' => 'category', 'uses' => 'CategoryController@category']);
-Route::get('article/{catslug}/{slug}/{id}', ['as' => 'article', 'uses' => 'ArticleController@article']);
+/*Home*/
 
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
+/*Blog*/
+
+Route::get('categories', ['as' => 'categories', 'uses' => 'BlogController@categories']);
+Route::get('category/{slug}/{id}', ['as' => 'category', 'uses' => 'BlogController@category']);
+Route::get('article/{catslug}/{slug}/{id}', ['as' => 'article', 'uses' => 'BlogController@article']);
+
+/*Formularios*/
+Route::get('contact', ['as' => 'contact', 'uses' => 'FormsController@contact']);
+
+/*Send Mail*/
+Route::get('email', ['as' => 'email', 'uses' => 'EmailController@send']);
+
+/*login*/
 
 Route::group(['before' => 'guest'], function () {
     Route::get('login', ['as' => 'login', 'uses' => 'LoginController@login']);
@@ -26,10 +38,16 @@ Route::group(['before' => 'auth'], function () {
     Route::get('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 });
 
+
+
+
+/*Menús*/
+
 Menu::make('MainMenu', function($menu){
 
     $menu->add('Home', array('route'  => 'home'));
     $menu->add('Categorias', array('route'  => 'categories'));
-    $menu->add('login', array('route'  => 'login'));
+    $menu->add('Contacto', array('route'  => 'contact'));
+    $menu->add('Login', array('route'  => 'login'));
 
 });
