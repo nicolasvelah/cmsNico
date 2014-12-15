@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenuTable extends Migration {
+class CreateCommentsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,15 @@ class CreateMenuTable extends Migration {
 	 */
 	public function up()
 	{
-        //Schema::dropIfExists('menu');
-        Schema::create('menu', function($table)
+
+        Schema::create('comments', function($table)
         {
             $table->increments('id');
-            $table->integer('cont_id');
-            $table->string('title');
-            $table->enum('type', ['article', 'category']);
+            $table->integer('user_id');
+            $table->string('component_name');
+            $table->integer('component_item_id');
+            $table->text('comment');
+            $table->integer('rate');
 
             $table->timestamps();
         });
@@ -31,7 +33,7 @@ class CreateMenuTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('menu');
+        Schema::drop('comments');
 	}
 
 }

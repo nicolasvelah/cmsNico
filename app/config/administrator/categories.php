@@ -11,6 +11,9 @@ return array(
     'model' => 'cmsNico\Entities\Category',
 
     'columns' => array(
+        'id' => array(
+            'title' => 'ID',
+        ),
         'title' => array(
             'title' => 'Titulo',
         ),
