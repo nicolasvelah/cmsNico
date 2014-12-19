@@ -27,6 +27,7 @@ class ArticleTableSeeder extends Seeder {
                 'user_id' => $i,
                 'component_name' => 'articles',
                 'component_item_id' => $i,
+                'title' => $faker->text(30),
                 'comment' => $faker->text(300),
                 'rate' => $faker->randomElement([1,2,3,4,5])
             ]);

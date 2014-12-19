@@ -1,4 +1,4 @@
-<?php namespace cmsNico\Components;
+<?php namespace cmsNico\Components\Forms;
 
 use Illuminate\Support\Facades\Facade;
 

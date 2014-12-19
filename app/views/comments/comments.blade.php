@@ -2,6 +2,5 @@
 
 @section('comments')
 
-<h1>COMENTARIO</h1>
-
+COMPONENETE
 @stop

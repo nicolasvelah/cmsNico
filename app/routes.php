@@ -27,6 +27,9 @@ Route::get('contact', ['as' => 'contact', 'uses' => 'FormsController@contact']);
 /*Send Mail*/
 Route::post('sendemail', ['as' => 'sendemail', 'uses' => 'EmailController@send']);
 
+/*Comment*/
+Route::put('comment', ['as' => 'comment', 'uses' => 'CommentsController@save']);
+
 /*login*/
 
 Route::group(['before' => 'guest'], function () {

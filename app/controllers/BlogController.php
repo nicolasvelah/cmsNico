@@ -2,6 +2,7 @@
 use cmsNico\Entities\Category;
 use cmsNico\Entities\Article;
 use cmsNico\Entities\Comments;
+use cmsNico\Entities\User;
 
 class BlogController extends BaseController {
 
@@ -15,9 +16,14 @@ class BlogController extends BaseController {
     {
         $article = Article::where('id', '=', $id)->get();
         $comments = Comments::where('component_item_id', '=', $id)->get();
-        //dd($comments);
 
-        return View::make('blog.article', compact('article', 'comments', 'slug', 'catslug'));
+
+        foreach($comments as $comment){
+            $user = User::where('id', '=', $comment->user_id)->get();
+            $comment->username = $user[0]->username;
+        }
+
+        return View::make('blog.article', compact('article', 'comments', 'slug', 'catslug', 'id'));
     }
     public function category($slug, $id)
     {

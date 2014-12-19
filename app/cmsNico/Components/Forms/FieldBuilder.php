@@ -1,7 +1,7 @@
 <?php
 
 
-namespace cmsNico\Components;
+namespace cmsNico\Components\Forms;
 
 use Illuminate\Html\FormBuilder as Form;
 use Illuminate\View\Factory as View;
@@ -98,7 +98,7 @@ class FieldBuilder {
 
     public function buildTemplate($type)
     {
-        if (\File::exists('app/views/forms/fields/' . $type . '.blade.php'))
+        if (\File::exists('../app/views/forms/fields/' . $type . '.blade.php'))
         {
             return 'forms/fields/' . $type;
         }

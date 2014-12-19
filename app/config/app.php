@@ -126,7 +126,8 @@ return array(
         'Frozennode\Administrator\AdministratorServiceProvider',
 
         // Custom
-        'cmsNico\Components\FieldServiceProvider'
+        'cmsNico\Components\Forms\FieldServiceProvider',
+        'cmsNico\Components\Comments\CommentServiceProvider'
 
 	),
 
@@ -198,7 +199,8 @@ return array(
 
         // Custom
 
-        'Field'           => 'cmsNico\Components\Field'
+        'Field'           => 'cmsNico\Components\Forms\Field',
+        'Comments'           => 'cmsNico\Components\Comments\Comment'
 
 	),
 

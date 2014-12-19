@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration {
             $table->integer('user_id');
             $table->string('component_name');
             $table->integer('component_item_id');
+            $table->text('title');
             $table->text('comment');
             $table->integer('rate');
 

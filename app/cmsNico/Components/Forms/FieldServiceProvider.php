@@ -6,7 +6,7 @@
  * Time: 8:35 PM
  */
 
-namespace cmsNico\Components;
+namespace cmsNico\Components\Forms;
 
 use Illuminate\Support\ServiceProvider;
 
