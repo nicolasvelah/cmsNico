@@ -11,8 +11,9 @@ class CommentBuilder {
         $this->view = $view;
     }
 
-    public function comments(){
-        return $this->view->make('comments.comments');
+    public function comments($comments, $id){
+        
+        return $this->view->make('comments.comments', compact('comments', 'id'));
     }
 
 }

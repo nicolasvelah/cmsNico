@@ -16,6 +16,7 @@ class LoginController extends BaseController {
 
         if (Auth::attempt($credentials))
         {
+            //dd('entra');
             if(is_admin()){
                 return Redirect::intended('/admin');
             }else{
@@ -23,7 +24,7 @@ class LoginController extends BaseController {
             }
 
         }
-        dd('no');
+        //dd('no');
         return Redirect::back()
             ->withInput()
             ->withErrors('Username or Password are incorrect.');
